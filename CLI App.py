@@ -72,6 +72,8 @@ def register():
 
 
 
+
+
 # Beranda Utama
 def utama():
     while True:
