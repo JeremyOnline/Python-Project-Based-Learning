@@ -42,16 +42,22 @@ def UserDB_Login():
     password = input("Password: ").strip()
 
     users = UserDB_Out()
-    for user in users:
-        if user[0] == username:
-            print("Login Succesful")
-            continue
+    ## Make the Verification verify the Username & password
+    # for user in users:
+    #     if user[0] == username:
+    #         print("Login Succesful")
+    #         break
+    # password_list = UserDB_Out
+    # for password in password_list:
+    #     if password == password:
+    #         print("Login Succesful")
+    #         break
     print("Login failed. Incorrect Username or Password")
-    break
 
 # Main Menu
 def main():
     while True:
+        # Make the os.system clear the CLI after 5 second Delay
         os.system('cls')
         print("\n=====BASIC CLI APP=====")
         print("1. Register")
