@@ -1,7 +1,11 @@
 import os
 import time
 
-USERS_DATABASE = "D:\Coding\Python\Project\BASIC_CLI_APP"
+
+BASE_DIR = os.path.dirname(__file__)
+USERS_DATABASE = os.path.join(BASE_DIR, "users-CLI.txt")
+
+
 
 # Print Out the Database
 def UserDB_Out():
@@ -39,7 +43,7 @@ def UserDB_Login():
 
     users = UserDB_Out()
     for user in users:
-        if user[0] == username:
+        if user[0] == username & pass[0] == password:
             print("Login Succesful")
             return True
     print("Login failed. Incorrect Username or Password")
