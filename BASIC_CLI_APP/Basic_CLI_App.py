@@ -43,10 +43,11 @@ def UserDB_Login():
 
     users = UserDB_Out()
     for user in users:
-        if user[0] == username & pass[0] == password:
+        if user[0] == username:
             print("Login Succesful")
-            return True
+            continue
     print("Login failed. Incorrect Username or Password")
+    break
 
 # Main Menu
 def main():
