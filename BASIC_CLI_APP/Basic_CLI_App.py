@@ -5,8 +5,6 @@ import time
 BASE_DIR = os.path.dirname(__file__)
 USERS_DATABASE = os.path.join(BASE_DIR, "users-CLI.txt")
 
-
-
 # Print Out the Database
 def UserDB_Out():
     users = []
@@ -42,23 +40,27 @@ def UserDB_Login():
     password = input("Password: ").strip()
 
     users = UserDB_Out()
-    ## Make the Verification verify the Username & password
-    # for user in users:
-    #     if user[0] == username:
-    #         print("Login Succesful")
-    #         break
-    # password_list = UserDB_Out
-    # for password in password_list:
-    #     if password == password:
-    #         print("Login Succesful")
-    #         break
-    print("Login failed. Incorrect Username or Password")
+    isTrue_users = False
+    isTrue_password = False
+    #Make the Verification verify the Username & password
+    for user in users:
+        if user[0] == username:
+            isTrue_users = True
+            break
+    for password in users:
+        if password[0] == password:
+            isTrue_password = True
+            break
+    if isTrue_users | isTrue_password == True:
+        print("Login Succesful!")
+    else:
+        print("Login failed. Incorrect Username or Password")
 
 # Main Menu
 def main():
     while True:
         # Make the os.system clear the CLI after 5 second Delay
-        os.system('cls')
+        # os.system('cls')
         print("\n=====BASIC CLI APP=====")
         print("1. Register")
         print("2. Login")
