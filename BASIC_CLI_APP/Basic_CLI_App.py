@@ -40,12 +40,12 @@ def UserDB_Login():
     password = input("Password: ").strip()
 
     users = UserDB_Out()
-    isTrue_users = False
-    isTrue_password = False
+    isTrue_users = False # Put the Indicator
+    isTrue_password = False # Set to False
     #Make the Verification verify the Username & password
     for user in users:
         if user[0] == username:
-            isTrue_users = True
+            isTrue_users = True # If the parameter is True, then Break
             break
     for password in users:
         if password[0] == password:
@@ -53,6 +53,7 @@ def UserDB_Login():
             break
     if isTrue_users | isTrue_password == True:
         print("Login Succesful!")
+
     else:
         print("Login failed. Incorrect Username or Password")
 
@@ -60,7 +61,8 @@ def UserDB_Login():
 def main():
     while True:
         # Make the os.system clear the CLI after 5 second Delay
-        # os.system('cls')
+        time.sleep(5)
+        os.system('cls')
         print("\n=====BASIC CLI APP=====")
         print("1. Register")
         print("2. Login")
@@ -78,7 +80,7 @@ def main():
                 time.sleep(1)
             break
         else:
-            print("Invalid Choice")
+                print("Invalid Choice")
 
 
 if __name__ == "__main__":
