@@ -14,24 +14,6 @@ We have a gym, and we want to track how long each person spends their time in th
 
 """
 
-BASE_DIR = os.path.dirname(__file__)
-USERS_DATABASE = os.path.join(BASE_DIR, "Duration_Registration.txt")
-
-# Print Out the Database
-def database_out():
-    users = []
-    if os.path.exists(USERS_DATABASE):
-        with open(USERS_DATABASE, "r") as file:
-            for line in file:
-                username, password = line.strip().split(",")
-                users.append((username, password))
-    return users
-
-# Save New User to Database
-def saveUser(name, time_user):
-    with open(USERS_DATABASE, "a") as file:
-        file.write(f"{name},{time_user}\n")
-
 # transaksi = {
 #             'deskripsi': deskripsi,
 #             'section': section,
@@ -43,7 +25,6 @@ def saveUser(name, time_user):
 
 def user_In(name, time_user):
     print(f"Welcome {name}!, You entered at {time_user}")
-    saveUser(name, time_user)
 
 def user_out(name, time_user):
     print(f"See you again, {name}")
