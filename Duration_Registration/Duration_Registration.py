@@ -45,6 +45,8 @@ def main():
             name = input("What is your name? ").capitalize()
             time_user = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
             user_out(name, time_user)
+        # elif choice == "3":
+        #     #It will check the member + record
         elif choice == "4":
             print("Goodbye!, See you again , Admin")
             for i in range(5, 0, -1):
