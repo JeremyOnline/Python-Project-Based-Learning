@@ -12,3 +12,28 @@ We have a gym, and we want to track how long each person spends their time in th
 4. Also i will make database for user that already become a member, so that we can track our member!
 
 """
+
+def user_In(name, time):
+    print(f"Welcome {name} to the gym! You entered at {time}")
+
+def user_out(name, time):
+    print(f"See you again, {name}")
+
+def main():
+    while True:
+        print("\n1. Enter the gym")
+        print("2. Exit the gym")
+        print("3. Check member")
+        print("4. Exit the program")
+        choice = input("What would you like to do? ")
+
+        if choice == "1":
+            name = input("What is your name? ")
+            time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            user_In(name, time)
+        if choice == "2":
+            name = input("What is your name? ")
+            time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            user_out(name, time)
+
+main()
